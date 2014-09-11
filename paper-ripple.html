@@ -257,6 +257,9 @@ Apply `circle` class to make the rippling effect within a circle.
 
     function cssColorWithAlpha(cssColor, alpha) {
         var parts = cssColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        if (!parts) {
+          parts = cssColor.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+(.\d+)?)\)$/)
+        }
         if (typeof alpha == 'undefined') {
             alpha = 1;
         }
