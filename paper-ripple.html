@@ -411,7 +411,7 @@ animation finishes to perform some action.
     Polymer({
       is: 'paper-ripple',
 
-      published: {
+      properties: {
         /**
          * The initial opacity set on the wave.
          *
@@ -428,7 +428,7 @@ animation finishes to perform some action.
          * @type number
          * @default 0.8
          */
-        opacityDecayVelocity: Number, 
+        opacityDecayVelocity: Number,
 
         /**
          * If true, ripples will exhibit a gravitational pull towards
@@ -549,4 +549,3 @@ animation finishes to perform some action.
     });
   });
 </script>
-
