@@ -17,17 +17,17 @@ Example:
     <paper-ripple></paper-ripple>
 
 `paper-ripple` listens to "down" and "up" events so it would display ripple
-effect when touches on it.  You can also defeat the default behavior and
-manually route the down and up actions to the ripple element.  Note that it is
-important if you call downAction() you will have to make sure to call upAction()
-so that `paper-ripple` would end the animation loop.
+effect when touches on it.  You can defeat the default behavior with
+`pointer-events: none` style, and then manually route the down and up actions
+to the ripple element.  If you call downAction(), make sure to also call upAction() 
+so that `paper-ripple` will end the animation loop.
 
 Example:
 
     <paper-ripple id="ripple" style="pointer-events: none;"></paper-ripple>
     ...
     downAction: function(e) {
-      this.$.ripple.downAction({x: e.x, y: e.y});
+      this.$.ripple.downAction({detail: {x: e.x, y: e.y}});
     },
     upAction: function(e) {
       this.$.ripple.upAction();
