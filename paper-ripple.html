@@ -260,6 +260,9 @@ animation finishes to perform some action.
 
     function cssColorWithAlpha(cssColor, alpha) {
         var parts = cssColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        if (!parts) {
+          parts = cssColor.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+(.\d+)?)\)$/)
+        }
         if (typeof alpha == 'undefined') {
             alpha = 1;
         }
